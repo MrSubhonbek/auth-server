@@ -1,7 +1,5 @@
-import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
-
+//валидация данных на клиенте
 export class AuthDto {
   email: string;
-
   password: string;
 }
