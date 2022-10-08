@@ -18,6 +18,17 @@ model User {
   email    String  @unique
   hash     String
   hashedRt String?
-
+  qweqw String?
+  posts    Contacts[]
   @@map("users")
+}
+
+model Contacts {
+  contacts_id   Int     @id @default(autoincrement())
+  name   String?
+  address   String?
+  description   String?
+  phone     String
+  author_id Int?
+  author    User?   @relation(fields: [author_id], references: [id])
 }
