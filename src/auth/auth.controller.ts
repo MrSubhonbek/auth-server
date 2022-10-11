@@ -18,9 +18,9 @@ import { Tokens } from './types';
 export class AuthController {
   constructor(private authService: AuthService) {}
 
-  @Get('')
-  getAll() {
-    return 'data';
+  @Get()
+  findAll() {
+    return this.authService.findAll();
   }
 
   @Post('local/signup')

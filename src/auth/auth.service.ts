@@ -10,6 +10,9 @@ import { ForbiddenException } from '@nestjs/common/exceptions/forbidden.exceptio
 export class AuthService {
   constructor(private prisma: PrismaService, private jwtService: JwtService) {}
 
+  findAll() {
+    return this.prisma.user.findMany();
+  }
   async signupLocal(dto: AuthDto): Promise<Tokens> {
     const hash = await this.hashData(dto.password);
 
